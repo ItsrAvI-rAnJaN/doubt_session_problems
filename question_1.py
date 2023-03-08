@@ -18,6 +18,9 @@ If the number given is a multiple of both 3 and 5, the output should be "FizzBuz
 If the number is not a multiple of either 3 or 5, the number should be output on its own as shown in the examples below.
 The output should always be a string even if it is not a multiple of 3 or 5.
 """
+"""
+write python code for hollow diamond star pattern
+"""
 
 
 def total_leg(chickens, cows, pigs):
@@ -44,8 +47,31 @@ def fizzbuzz(n):
         return str(n)
 
 
+def hollow_diamond(num):
+    for i in range(1, num + 1):
+        for j in range(1, num - i + 1):
+            print(" ", end=" ")
+        for j in range(1, 2 * i):
+            if j == 1 or j == 2 * i - 1:
+                print("*", end=" ")
+            else:
+                print(" ", end=" ")
+        print()
+    for i in range(num - 1, 0, -1):
+        for j in range(1, num - i + 1):
+            print(" ", end=" ")
+        for j in range(1, 2 * i):
+            if j == 1 or j == 2 * i - 1:
+                print("*", end=" ")
+            else:
+                print(" ", end=" ")
+        print()
+
+
 if __name__ == '__main__':
-    print(total_leg(3, 5, 7))
-    arr = [3, 100, 4, 56, 67, 89, 23]
-    print(find_max(arr))
-    print(fizzbuzz(45))
+    # print(total_leg(3, 5, 7))
+    # arr = [3, 100, 4, 56, 67, 89, 23]
+    # print(find_max(arr))
+    # print(fizzbuzz(45))
+    num = int(input("Enter number of rows N : "))
+    hollow_diamond(num)
